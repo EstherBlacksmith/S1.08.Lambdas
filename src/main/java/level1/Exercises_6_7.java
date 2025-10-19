@@ -22,6 +22,8 @@ public class Exercises_6_7 {
         listNumbersAndStrings.add("Quokka");
 
         System.out.println(exercise6(listNumbersAndStrings));
+        System.out.println(exercise7(listNumbersAndStrings));
+
 
     }
 
@@ -31,6 +33,16 @@ public class Exercises_6_7 {
                 .filter(os -> os instanceof String)
                 .map(oString -> (String) oString)
                 .sorted(Comparator.comparingInt(String::length))
+                .collect(Collectors.toList());
+        return onlyStrings;
+
+    }
+    private static List<String> exercise7(ArrayList<Object> numbersAndStrings) {
+
+        List<String> onlyStrings = numbersAndStrings.stream()
+                .filter(os -> os instanceof String)
+                .map(oString -> (String) oString)
+                .sorted(Comparator.comparingInt(String::length).reversed())
                 .collect(Collectors.toList());
         return onlyStrings;
 
