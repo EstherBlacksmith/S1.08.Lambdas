@@ -44,23 +44,39 @@ public class ManipulatingStrings {
 
         Stream<String> phoneticallyOrdered = listNumbersAndStrings.stream()
                 .map(Object::toString)
-                .sorted((oString1,oString2)-> {
-                   boolean e1=  oString1.contains("e") ;
-                   boolean e2=  oString2.contains("e") ;
+                .sorted((oString1, oString2) -> {
+                    boolean e1 = oString1.contains(containingLetter);
+                    boolean e2 = oString2.contains(containingLetter);
 
-                   if (e1 && !e2) return -1;
-                   if (!e1 && e2) return 1;
+                    if (e1 && !e2) return -1;
+                    if (!e1 && e2) return 1;
 
-                   return Character.compare(oString1.charAt(0), oString2.charAt(0));
+                    return Character.compare(oString1.charAt(0), oString2.charAt(0));
 
 
                 });
-           //     .map(oString -> (String) oString)
-             //   .sorted(Comparator.comparingInt(a -> (a.contains(containingLetter.toLowerCase()) || a.contains(containingLetter.toUpperCase()) ? 0 : 1)));
+        return phoneticallyOrdered;
+    }
+
+    protected Stream<String> OrderingByContainingLetterAndChangingOneChar(
+            ArrayList<Object> listNumbersAndStrings, String containingLetter, char charToReplace) {
+
+        Stream<String> phoneticallyOrdered = listNumbersAndStrings.stream()
+                .map(Object::toString)
+                .sorted((oString1, oString2) -> {
+                    boolean e1 = oString1.contains(containingLetter);
+                    boolean e2 = oString2.contains(containingLetter);
+
+                    if (e1 && !e2) return -1;
+                    if (!e1 && e2) return 1;
+
+                    return Character.compare(oString1.charAt(0), oString2.charAt(0));
+
+                })
+                .map(oString -> (oString.contains(Character.toString(charToReplace))) ? oString.replace(charToReplace, '4') : oString);
 
 
         return phoneticallyOrdered;
     }
-
 
 }
