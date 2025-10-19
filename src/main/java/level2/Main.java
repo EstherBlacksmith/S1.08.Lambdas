@@ -1,6 +1,7 @@
 package level2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     private static final int THREE = 3;
@@ -15,8 +16,17 @@ public class Main {
         namesString.add("Avelina");
         namesString.add("Ares");
         namesString.add("Aro");
-        StartWithAndTotalLetters ex1 = new StartWithAndTotalLetters();
-        System.out.println(ex1.startWithAndTotalLetters(namesString, AUPPERCASE, THREE));
+
+        ReturningManipulatedStrings exercises = new ReturningManipulatedStrings();
+        System.out.println(exercises.startWithAndTotalLetters(namesString, AUPPERCASE, THREE));
+
+        List<Integer> integers = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            integers.add( (int)(Math.random() * 11));
+        }
+
+        System.out.println(exercises.separatedByComma(integers));
     }
 
 

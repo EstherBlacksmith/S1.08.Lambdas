@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class StartWithAndTotalLetters {
+public class ReturningManipulatedStrings {
 
     protected List<String> startWithAndTotalLetters(ArrayList<String> namesString, String containsLetter, int totalLetters) {
         Predicate<String> startIngA = stringList -> stringList.contains(containsLetter);
@@ -16,5 +16,14 @@ public class StartWithAndTotalLetters {
                 .collect(Collectors.toList());
         return onlyStrings;
 
+    }
+
+    protected String separatedByComma(List<Integer> integerList){
+        String commaSeparatedValues;
+        commaSeparatedValues = integerList.stream()
+                .map(integer -> ((integer % 2== 0 ? "e" + integer : "o" + integer ) ))
+                        .collect(Collectors.toList()).toString();
+
+        return commaSeparatedValues;
     }
 }
