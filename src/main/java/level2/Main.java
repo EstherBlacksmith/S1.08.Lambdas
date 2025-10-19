@@ -1,12 +1,11 @@
 package level2;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Exercise1 {
+public class Main {
     private static final int THREE = 3;
 
     public static void main(String[] args) {
