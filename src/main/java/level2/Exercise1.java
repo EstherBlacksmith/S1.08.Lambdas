@@ -14,9 +14,11 @@ public class Exercise1 {
         namesString.add("Pepe");
         namesString.add("Pepa");
         namesString.add("Ana");
+        namesString.add("ana");
         namesString.add("Avelina");
         namesString.add("Ares");
         namesString.add("Aro");
+
         System.out.println(exercise1(namesString));
     }
 
