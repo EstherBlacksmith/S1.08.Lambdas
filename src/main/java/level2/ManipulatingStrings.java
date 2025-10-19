@@ -30,15 +30,27 @@ public class ManipulatingStrings {
         return commaSeparatedValues;
     }
 
-    protected Stream<String> OrderingPhonetically(ArrayList<Object> listNumbersAndStrings) {
+    protected List<String> OrderingPhonetically(ArrayList<Object> listNumbersAndStrings) {
 
-        Stream<String> phoneticallyOrdered = listNumbersAndStrings.stream()
-                .filter(os -> os instanceof String)
-                .map(oString -> (String) oString)
-                .sorted(Comparator.comparing(os -> os.charAt(0)));
+        List<String> phoneticallyOrdered = listNumbersAndStrings.stream()
+                .map(Object::toString)
+                .sorted(Comparator.comparingInt(oString -> oString.charAt(0)))
+                .collect(Collectors.toList());
 
         return phoneticallyOrdered;
     }
+/*
+    protected Stream<String> OrderingByContainingLetter(ArrayList<Object> listNumbersAndStrings, String containingLetter) {
+
+        Stream<String> phoneticallyOrdered = listNumbersAndStrings.stream()
+                // .filter(os -> os instanceof String)
+                .map(oString -> (String) oString)
+                .sorted(Comparator.comparingInt(a -> (a.contains(containingLetter.toLowerCase()) || a.contains(containingLetter.toUpperCase()) ? 0 : 1)));
+
+        //    .Comparator.comparing(Comparator.comparingInt(os -> os.charAt(0))));
+
+        return phoneticallyOrdered;
+    }*/
 
 
 }

@@ -17,13 +17,13 @@ public class Main_1_2 {
         namesString.add("Ares");
         namesString.add("Aro");
 
-        ReturningManipulatedStrings exercises = new ReturningManipulatedStrings();
+        ManipulatingStrings exercises = new ManipulatingStrings();
         System.out.println(exercises.startWithAndTotalLetters(namesString, AUPPERCASE, THREE));
 
         List<Integer> integers = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            integers.add( (int)(Math.random() * 11));
+            integers.add((int) (Math.random() * 11));
         }
 
         System.out.println(exercises.separatedByComma(integers));
