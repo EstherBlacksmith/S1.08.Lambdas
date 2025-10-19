@@ -39,18 +39,28 @@ public class ManipulatingStrings {
 
         return phoneticallyOrdered;
     }
-/*
+
     protected Stream<String> OrderingByContainingLetter(ArrayList<Object> listNumbersAndStrings, String containingLetter) {
 
         Stream<String> phoneticallyOrdered = listNumbersAndStrings.stream()
-                // .filter(os -> os instanceof String)
-                .map(oString -> (String) oString)
-                .sorted(Comparator.comparingInt(a -> (a.contains(containingLetter.toLowerCase()) || a.contains(containingLetter.toUpperCase()) ? 0 : 1)));
+                .map(Object::toString)
+                .sorted((oString1,oString2)-> {
+                   boolean e1=  oString1.contains("e") ;
+                   boolean e2=  oString2.contains("e") ;
 
-        //    .Comparator.comparing(Comparator.comparingInt(os -> os.charAt(0))));
+                   if (e1 && !e2) return -1;
+                   if (!e1 && e2) return 1;
+
+                   return Character.compare(oString1.charAt(0), oString2.charAt(0));
+
+
+                });
+           //     .map(oString -> (String) oString)
+             //   .sorted(Comparator.comparingInt(a -> (a.contains(containingLetter.toLowerCase()) || a.contains(containingLetter.toUpperCase()) ? 0 : 1)));
+
 
         return phoneticallyOrdered;
-    }*/
+    }
 
 
 }

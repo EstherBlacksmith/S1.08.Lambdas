@@ -22,6 +22,6 @@ public class Main_4 {
 
         ManipulatingStrings.OrderingPhonetically(listNumbersAndStrings).forEach(System.out::println);
         System.out.println("----------------");
-        //ManipulatingStrings.OrderingByContainingLetter(listNumbersAndStrings,"e").forEach(System.out::println);
+        ManipulatingStrings.OrderingByContainingLetter(listNumbersAndStrings,"e").forEach(System.out::println);
     }
 }
