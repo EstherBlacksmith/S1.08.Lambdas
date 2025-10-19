@@ -1,11 +1,6 @@
-package level1;
+package level1.Exercise_8;
 
-@FunctionalInterface
-interface InsideOut {
-    String reverse(String somethingToReverse);
-}
-
-public class Exercise_8 {
+public class Main_8 {
     public static void main(String[] args) {
         String str = "AEIOU";
 

@@ -1,11 +1,6 @@
-package level1;
+package level1.Exercise_5;
 
-@FunctionalInterface
-interface PiValue {
-    Double getPiValue();
-}
-
-public class Exercise_5 {
+public class Main_5 {
     public static void main(String[] args) {
 
         PiValue customPi = () -> 3.1415;

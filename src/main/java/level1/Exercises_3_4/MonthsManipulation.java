@@ -1,20 +1,12 @@
-package level1;
+package level1.Exercises_3_4;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class Exercises_3_4 {
-    private static List<String> monthsList = new ArrayList<>();
+public class MonthsManipulation {
 
-    public static void main(String[] args) {
-        addingMonths();
-        exercise1();
-        exercise2();
-    }
-
-    private static void addingMonths() {
+    protected static List<String> addingMonths(List<String> monthsList) {
         Calendar calendar = Calendar.getInstance();
 
         for (int i = 0; i < 11; i++) {
@@ -22,13 +14,14 @@ public class Exercises_3_4 {
             String monthName = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.UK);
             monthsList.add(monthName);
         }
+        return monthsList;
     }
 
-    private static void exercise1() {
+    protected void listingMonths(List<String> monthsList) {
         monthsList.stream().forEach(System.out::println);
     }
 
-    private static void exercise2() {
+    protected void listingMonthsReferenced(List<String> monthsList) {
         monthsList.forEach(System.out::println);
     }
 }
