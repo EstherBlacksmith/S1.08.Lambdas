@@ -1,15 +1,13 @@
 package level2;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class Main {
     private static final int THREE = 3;
+    private static final String AUPPERCASE = "A";
 
     public static void main(String[] args) {
-        ArrayList<String> namesString =  new ArrayList<>();
+        ArrayList<String> namesString = new ArrayList<>();
         namesString.add("Pepe");
         namesString.add("Pepa");
         namesString.add("Ana");
@@ -17,18 +15,9 @@ public class Main {
         namesString.add("Avelina");
         namesString.add("Ares");
         namesString.add("Aro");
-
-        System.out.println(exercise1(namesString));
+        Exercise1 ex1 = new Exercise1();
+        System.out.println(ex1.startWithAndTotalLetters(namesString, AUPPERCASE, THREE));
     }
 
-    private static List<String> exercise1(ArrayList<String> namesString) {
-        Predicate<String> startIngA = stringList -> stringList.contains("A");
-        Predicate <String> totalLength = stringList -> stringList.length() == THREE;
 
-        List<String> onlyStrings = namesString.stream()
-                .filter(startIngA.and(totalLength))
-                .collect(Collectors.toList());
-        return onlyStrings;
-
-    }
 }
