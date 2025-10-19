@@ -3,7 +3,7 @@ package level2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Main_1_2 {
     private static final int THREE = 3;
     private static final String AUPPERCASE = "A";
 
