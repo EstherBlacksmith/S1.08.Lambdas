@@ -11,6 +11,7 @@ public class Exercises_3_4 {
     public static void main(String[] args) {
         addingMonths();
         exercise1();
+        exercise2();
     }
 
     private static void addingMonths() {
@@ -25,6 +26,9 @@ public class Exercises_3_4 {
 
     private static void exercise1() {
         monthsList.stream().forEach(System.out::println);
+    }
 
+    private static void exercise2() {
+        monthsList.forEach(System.out::println);
     }
 }
