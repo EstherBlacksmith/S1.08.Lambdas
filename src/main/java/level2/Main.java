@@ -15,7 +15,7 @@ public class Main {
         namesString.add("Avelina");
         namesString.add("Ares");
         namesString.add("Aro");
-        Exercise1 ex1 = new Exercise1();
+        StartWithAndTotalLetters ex1 = new StartWithAndTotalLetters();
         System.out.println(ex1.startWithAndTotalLetters(namesString, AUPPERCASE, THREE));
     }
 
